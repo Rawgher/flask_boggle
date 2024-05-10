@@ -1,0 +1,28 @@
+#game {
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.board {
+  width: 100%;
+  height: 300px;
+}
+
+.board tbody tr td {
+  text-align: center;
+  font-size: 32px;
+}
+
+.high-score,
+.score-p,
+.word-form,
+.msg {
+  text-align: center;
+  font-size: 18px;
+}
+
+.words li {
+  font-size: 18px;
+  text-transform: uppercase;
+}

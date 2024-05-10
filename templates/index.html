@@ -8,7 +8,8 @@
   </head>
   <body>
     <section id="game">
-      <table class="boggle-board">
+      <!-- bringing in the game board for play -->
+      <table class="board">
         <tbody>
           {% for row in board %}
           <tr>
@@ -20,14 +21,37 @@
         </tbody>
       </table>
 
+      <!-- displays the highest score and how many times the user has played the game -->
+      <p class="high-score">
+        High Score:
+        <b>{{ highscore }}</b>
+        in {{ plays }} plays
+      </p>
+
+      <!-- holder for score and timer -->
+      <p class="score-p">
+        Score: <b class="score">0</b> with seconds left to guess:
+        <b class="timer"></b>
+      </p>
+
+      <!-- form used to submit user guesses through axios -->
       <form class="word-form" method="POST">
         <input name="word" class="word" />
         <button>Submit</button>
       </form>
+
+      <!-- holder that displays messages meant for the user -->
+      <p class="msg"></p>
+
+      <!-- holder for words that score -->
+      <ul class="words"></ul>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/static/app.js"></script>
+    <script>
+      let game = new BoggleGame("game", 60);
+    </script>
   </body>
 </html>
